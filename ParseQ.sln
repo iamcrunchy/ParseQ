@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseQ", "ParseQ\ParseQ.csproj", "{76E30B72-2C9D-4C05-93CC-7366E39EF836}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseQ.Parse", "ParseQ.Parse\ParseQ.Parse.csproj", "{CAEED745-B13F-433C-A5FF-387950B41106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseQ.Dto", "ParseQ.Dto\ParseQ.Dto.csproj", "{7DB828FC-3CDF-4142-9272-50D1F974AA60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76E30B72-2C9D-4C05-93CC-7366E39EF836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E30B72-2C9D-4C05-93CC-7366E39EF836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E30B72-2C9D-4C05-93CC-7366E39EF836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E30B72-2C9D-4C05-93CC-7366E39EF836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAEED745-B13F-433C-A5FF-387950B41106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAEED745-B13F-433C-A5FF-387950B41106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAEED745-B13F-433C-A5FF-387950B41106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAEED745-B13F-433C-A5FF-387950B41106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DB828FC-3CDF-4142-9272-50D1F974AA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB828FC-3CDF-4142-9272-50D1F974AA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB828FC-3CDF-4142-9272-50D1F974AA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB828FC-3CDF-4142-9272-50D1F974AA60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

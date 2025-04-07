@@ -1,0 +1,11 @@
+D:\source\ParseQ\ParseQ.Dto\bin\Debug\net9.0\ParseQ.Dto.deps.json
+D:\source\ParseQ\ParseQ.Dto\bin\Debug\net9.0\ParseQ.Dto.dll
+D:\source\ParseQ\ParseQ.Dto\bin\Debug\net9.0\ParseQ.Dto.pdb
+D:\source\ParseQ\ParseQ.Dto\obj\Debug\net9.0\ParseQ.Dto.GeneratedMSBuildEditorConfig.editorconfig
+D:\source\ParseQ\ParseQ.Dto\obj\Debug\net9.0\ParseQ.Dto.AssemblyInfoInputs.cache
+D:\source\ParseQ\ParseQ.Dto\obj\Debug\net9.0\ParseQ.Dto.AssemblyInfo.cs
+D:\source\ParseQ\ParseQ.Dto\obj\Debug\net9.0\ParseQ.Dto.csproj.CoreCompileInputs.cache
+D:\source\ParseQ\ParseQ.Dto\obj\Debug\net9.0\ParseQ.Dto.dll
+D:\source\ParseQ\ParseQ.Dto\obj\Debug\net9.0\refint\ParseQ.Dto.dll
+D:\source\ParseQ\ParseQ.Dto\obj\Debug\net9.0\ParseQ.Dto.pdb
+D:\source\ParseQ\ParseQ.Dto\obj\Debug\net9.0\ref\ParseQ.Dto.dll
