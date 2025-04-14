@@ -1,4 +1,4 @@
-﻿namespace ParseQ.Dto;
+﻿namespace ParseQDto;
 
 public class MultipleChoiceDto
 {

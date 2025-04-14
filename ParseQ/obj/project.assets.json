@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "ParseDeepSeekFormat/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/ParseDeepSeekFormat.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParseDeepSeekFormat.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ParseDeepSeekFormat/1.0.0": {
+      "type": "project",
+      "path": "../ParseDeepSeekFormat/ParseDeepSeekFormat.csproj",
+      "msbuildProject": "../ParseDeepSeekFormat/ParseDeepSeekFormat.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "ParseDeepSeekFormat >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\crunchy\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\source\\ParseQ\\ParseDeepSeekFormat\\ParseDeepSeekFormat.csproj": {
+              "projectPath": "D:\\source\\ParseQ\\ParseDeepSeekFormat\\ParseDeepSeekFormat.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

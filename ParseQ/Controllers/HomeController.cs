@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using ParseDeepSeekFormat;
+using ParseQ.Helpers;
 using ParseQ.Models;
 
 namespace ParseQ.Controllers;
@@ -19,11 +21,11 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> OpenTextFile(IFormFile file)
+    public async Task<IActionResult> Index(IFormFile file)
     {
         try
         {
-            if(file == null || file.Length == 0)
+            if(file.Length == 0)
             {
                 ViewBag.ErrorMessage = "Please upload a valid text file.";
                 return View("Index");
@@ -31,10 +33,15 @@ public class HomeController : Controller
 
             var path = Path.GetTempFileName();
 
-            using (var stream = System.IO.File.Create(path))
-            {
-                await file.CopyToAsync(stream);
-            }
+            var text = await file.ReadAllBytesAsync();
+
+           // var parse = new ParseDeepSeekFormat();
+           var parser = new Parse();
+           var parsedSuccessfully = parser.ParseTextFile(text, Path.GetFileNameWithoutExtension(file.FileName));
+           //parser.ConvertTextToQtiAsync(text, Path.GetFileNameWithoutExtension(file.FileName));
+           //var result = parser.ConvertTextToQtiAsync(stream, path);
+
+           //await file.CopyToAsync(stream);
         }
         catch (Exception ex)
         {

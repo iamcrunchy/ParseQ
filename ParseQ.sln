@@ -2,9 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseQ", "ParseQ\ParseQ.csproj", "{76E30B72-2C9D-4C05-93CC-7366E39EF836}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseQ.Parse", "ParseQ.Parse\ParseQ.Parse.csproj", "{CAEED745-B13F-433C-A5FF-387950B41106}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parse", "Parse\Parse.csproj", "{CAEED745-B13F-433C-A5FF-387950B41106}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseQ.Dto", "ParseQ.Dto\ParseQ.Dto.csproj", "{7DB828FC-3CDF-4142-9272-50D1F974AA60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseQDto", "ParseQDto\ParseQDto.csproj", "{7DB828FC-3CDF-4142-9272-50D1F974AA60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseDeepSeekFormat", "ParseDeepSeekFormat\ParseDeepSeekFormat.csproj", "{D5A95514-E012-45A3-8B34-C51EFB8E8027}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,9 @@ Global
 		{7DB828FC-3CDF-4142-9272-50D1F974AA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DB828FC-3CDF-4142-9272-50D1F974AA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DB828FC-3CDF-4142-9272-50D1F974AA60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5A95514-E012-45A3-8B34-C51EFB8E8027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5A95514-E012-45A3-8B34-C51EFB8E8027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5A95514-E012-45A3-8B34-C51EFB8E8027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5A95514-E012-45A3-8B34-C51EFB8E8027}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

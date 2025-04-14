@@ -95,3 +95,8 @@ D:\source\ParseQ\ParseQ\obj\Debug\net9.0\refint\ParseQ.dll
 D:\source\ParseQ\ParseQ\obj\Debug\net9.0\ParseQ.pdb
 D:\source\ParseQ\ParseQ\obj\Debug\net9.0\ParseQ.genruntimeconfig.cache
 D:\source\ParseQ\ParseQ\obj\Debug\net9.0\ref\ParseQ.dll
+D:\source\ParseQ\ParseQ\obj\Debug\net9.0\ParseQ.sourcelink.json
+D:\source\ParseQ\ParseQ\bin\Debug\net9.0\ParseDeepSeekFormat.dll
+D:\source\ParseQ\ParseQ\bin\Debug\net9.0\ParseDeepSeekFormat.pdb
+D:\source\ParseQ\ParseQ\obj\Debug\net9.0\ParseQ.csproj.AssemblyReference.cache
+D:\source\ParseQ\ParseQ\obj\Debug\net9.0\ParseQ.csproj.Up2Date

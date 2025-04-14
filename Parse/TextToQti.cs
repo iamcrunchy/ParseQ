@@ -1,10 +1,15 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace ParseQ.Parse;
+namespace Parse;
 
 public class TextToQti
 {
-    private string _qtiXml = string.Empty;
+    private string _qtiXml;
+
+    public TextToQti()
+    {
+        _qtiXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    }
     
     public static void ConvertTextToQti(string text)
     {
@@ -31,7 +36,7 @@ public class TextToQti
 
     public async Task<string> ConvertTextToQtiAsync(Stream textStream, string filePath)
     {
-        _qtiXml = BuildQtiXml(filePath);
+        BuildQtiXml(filePath);
         using var reader = new StreamReader(textStream);
         while(!reader.EndOfStream)
         {
@@ -91,9 +96,8 @@ public class TextToQti
     private void BuildQtiXml(string fileName)
     {
         // Build the QTI XML structure
-        _qtiXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
         _qtiXml += "<questestinterop>\n";
-        _qtiXml += "<assessment title=\"fileName\">\n";
+        _qtiXml += $"<assessment title=\"{fileName}\">\n";
         _qtiXml += "<section>\n";
     }
     

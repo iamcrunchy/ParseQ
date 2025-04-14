@@ -7,14 +7,30 @@
   "targets": {
     ".NETCoreApp,Version=v9.0": {
       "ParseQ/1.0.0": {
+        "dependencies": {
+          "ParseDeepSeekFormat": "1.0.0"
+        },
         "runtime": {
           "ParseQ.dll": {}
+        }
+      },
+      "ParseDeepSeekFormat/1.0.0": {
+        "runtime": {
+          "ParseDeepSeekFormat.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "ParseQ/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ParseDeepSeekFormat/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
