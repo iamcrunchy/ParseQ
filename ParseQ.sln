@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseQDto", "ParseQDto\Pars
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseDeepSeekFormat", "ParseDeepSeekFormat\ParseDeepSeekFormat.csproj", "{D5A95514-E012-45A3-8B34-C51EFB8E8027}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileOperations", "FileOperations\FileOperations.csproj", "{8AFF37EA-9099-4969-9354-FC62014121E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseQTests", "ParseQTests\ParseQTests.csproj", "{2E5B71DC-ACCE-4D11-A4CC-BC38779D3F6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{D5A95514-E012-45A3-8B34-C51EFB8E8027}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5A95514-E012-45A3-8B34-C51EFB8E8027}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5A95514-E012-45A3-8B34-C51EFB8E8027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AFF37EA-9099-4969-9354-FC62014121E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AFF37EA-9099-4969-9354-FC62014121E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AFF37EA-9099-4969-9354-FC62014121E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AFF37EA-9099-4969-9354-FC62014121E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E5B71DC-ACCE-4D11-A4CC-BC38779D3F6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E5B71DC-ACCE-4D11-A4CC-BC38779D3F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E5B71DC-ACCE-4D11-A4CC-BC38779D3F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E5B71DC-ACCE-4D11-A4CC-BC38779D3F6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

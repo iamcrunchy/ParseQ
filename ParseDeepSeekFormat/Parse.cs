@@ -31,6 +31,8 @@ xsi:schemaLocation=""http://www.imsglobal.org/xsd/ims_qtiasiv1p2 http://www.imsg
     {
         
         SetQtiQuizName(fileName);
+        SetMetaData();
+        AddSection();
         var questions = new List<string>();
         
         try
@@ -71,6 +73,18 @@ xsi:schemaLocation=""http://www.imsglobal.org/xsd/ims_qtiasiv1p2 http://www.imsg
     
         return _qtiXml;
     }
+    
+    public async Task ParseQuestionBank(string questionText, string quizName)
+    {
+        // read the question text file and find the multiple choice questions
+        // between the line that starts with ### and contains Multiple and Choice
+        // and --- before the next // line containing ### 
+        
+        // find the first line that starts with ### and contains "Multiple" and "Choice"
+        var startIndex = questionText.IndexOf("###", StringComparison.Ordinal);
+        var endIndex = questionText.IndexOf("---", startIndex, StringComparison.Ordinal);
+        
+    }
 
     private void AddQuestion(string line)
     {
@@ -101,6 +115,21 @@ xsi:schemaLocation=""http://www.imsglobal.org/xsd/ims_qtiasiv1p2 http://www.imsg
         // Build the QTI XML structure
         var fileName = string.Concat(quizName, ".xml");
         _qtiXml += $"/r/n<assessment title=\"{fileName}\">\n";
+    }
+
+    private void SetMetaData()
+    {
+        _qtiXml += $"<qtimetadata>\n";
+        _qtiXml += $"  <qtimetadatafield>\n";
+        _qtiXml += $"    <fieldlabel>cc_maxattempts</fieldlabel>\n";
+        _qtiXml += $"    <fieldentry>2</fieldentry>\n";
+        _qtiXml += $"  </qtimetadatafield>\n";
+        _qtiXml += $"<qtimetadata>\n";
+    }
+    
+    private void AddSection()
+    {
+        _qtiXml += "<section>\n";
     }
     
     private void CompleteQtiXml()
