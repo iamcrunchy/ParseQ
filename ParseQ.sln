@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileOperations", "FileOpera
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParseQTests", "ParseQTests\ParseQTests.csproj", "{2E5B71DC-ACCE-4D11-A4CC-BC38779D3F6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LookUps", "LookUps\LookUps.csproj", "{ED752801-34B3-4AC5-88C1-2A6AAF5F70B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{2E5B71DC-ACCE-4D11-A4CC-BC38779D3F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E5B71DC-ACCE-4D11-A4CC-BC38779D3F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E5B71DC-ACCE-4D11-A4CC-BC38779D3F6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED752801-34B3-4AC5-88C1-2A6AAF5F70B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED752801-34B3-4AC5-88C1-2A6AAF5F70B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED752801-34B3-4AC5-88C1-2A6AAF5F70B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED752801-34B3-4AC5-88C1-2A6AAF5F70B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Xml;
+using System.Xml.Linq;
 using ParseQ.Dto;
 using ParseQDto;
 
@@ -8,11 +9,12 @@ public class QtiGenerator
 {
     public XDocument GenerateQtiXml(List<Question> questions, string title)
     {
+        var xsi = XsiNamespace();
         var qtiXml = new XDocument(
             new XElement("assessmentItem",
                 new XAttribute("xmlns", "http://www.imsglobal.org/xsd/imsg"),
-                new XAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance"),
-                new XAttribute("xsi:schemaLocation", "http://www.imsglobal.org/xsd/imsg assessmentItem_v1p2.xsd"),
+                new XAttribute(XNamespace.Xmlns + "xsi", xsi.NamespaceName),
+                new XAttribute(xsi + "schemaLocation", "http://www.imsglobal.org/xsd/imsg assessmentItem_v1p2.xsd"),
                 new XElement("itemBody",
                     new XElement("choiceInteraction",
                         new XAttribute("responseIdentifier", "RESPONSE"),
@@ -34,6 +36,11 @@ public class QtiGenerator
             );
     }
 
+    private XNamespace XsiNamespace()
+    {
+        return XNamespace.Get("http://www.w3.org/2001/XMLSchema-instance");
+    }
+
     public void SetMetaData(XDocument qtiXml, string title,
         int maxAttempts = 2)
     {
@@ -43,7 +50,7 @@ public class QtiGenerator
             assessment.Add(
                 new XElement("qtimetadata",
                     new XElement("qtimetadatafield",
-                        new XElement("fieldLabel", "maxAttempts"),
+                        new XElement("fieldLabel", "cc_maxattempts"),
                         new XElement("fieldentry", "2")
                     )
                 )
@@ -70,6 +77,7 @@ public class QtiGenerator
         if (section != null)
         {
             section.Add(new XElement("item",
+                new XAttribute("ident", Guid.NewGuid()),
                 new XAttribute("title", question.Title),
                 new XElement("itemmetadata",
                     new XElement("qtimetadata",
@@ -79,13 +87,11 @@ public class QtiGenerator
                         ),
                         new XElement("qtimetadatafield",
                             new XElement("fieldlabel", "points_possible"),
-                            new XElement("fieldentry", question.PointsPossible))
-                        // new XElement("qtimetadatafield",
-                        //     new XElement("fieldlabel", "original_answer_ids"),
-                        //     new XElement("fieldentry", "update when you get the ids, if you get them")),
-                        // new XElement("qtimetadatafield",
-                        //     new XElement("fieldlabel", "assessment_question_identifierref"),
-                        //     new XElement("fieldentry", "update when you get the identifier, if you get it"))
+                            new XElement("fieldentry", question.PointsPossible),
+                            new XElement("qtimetadatafield",
+                                new XElement("fieldlabel", "assessment_question_identifierref"),
+                                new XElement("fieldentry", Guid.NewGuid()))
+                        )
                     )
                 )
             ));

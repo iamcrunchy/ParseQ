@@ -2,6 +2,43 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "FileOperations/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "ParseQDto": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FileOperations.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FileOperations.dll": {}
+        }
+      },
+      "LookUps/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/LookUps.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LookUps.dll": {}
+        }
+      },
+      "Parse/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "LookUps": "1.0.0",
+          "ParseQDto": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Parse.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Parse.dll": {}
+        }
+      },
       "ParseDeepSeekFormat/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -11,18 +48,50 @@
         "runtime": {
           "bin/placeholder/ParseDeepSeekFormat.dll": {}
         }
+      },
+      "ParseQDto/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/ParseQDto.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ParseQDto.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "FileOperations/1.0.0": {
+      "type": "project",
+      "path": "../FileOperations/FileOperations.csproj",
+      "msbuildProject": "../FileOperations/FileOperations.csproj"
+    },
+    "LookUps/1.0.0": {
+      "type": "project",
+      "path": "../LookUps/LookUps.csproj",
+      "msbuildProject": "../LookUps/LookUps.csproj"
+    },
+    "Parse/1.0.0": {
+      "type": "project",
+      "path": "../Parse/Parse.csproj",
+      "msbuildProject": "../Parse/Parse.csproj"
+    },
     "ParseDeepSeekFormat/1.0.0": {
       "type": "project",
       "path": "../ParseDeepSeekFormat/ParseDeepSeekFormat.csproj",
       "msbuildProject": "../ParseDeepSeekFormat/ParseDeepSeekFormat.csproj"
+    },
+    "ParseQDto/1.0.0": {
+      "type": "project",
+      "path": "../ParseQDto/ParseQDto.csproj",
+      "msbuildProject": "../ParseQDto/ParseQDto.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "FileOperations >= 1.0.0",
+      "Parse >= 1.0.0",
       "ParseDeepSeekFormat >= 1.0.0"
     ]
   },
@@ -58,8 +127,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "D:\\source\\ParseQ\\FileOperations\\FileOperations.csproj": {
+              "projectPath": "D:\\source\\ParseQ\\FileOperations\\FileOperations.csproj"
+            },
             "D:\\source\\ParseQ\\ParseDeepSeekFormat\\ParseDeepSeekFormat.csproj": {
               "projectPath": "D:\\source\\ParseQ\\ParseDeepSeekFormat\\ParseDeepSeekFormat.csproj"
+            },
+            "D:\\source\\ParseQ\\Parse\\Parse.csproj": {
+              "projectPath": "D:\\source\\ParseQ\\Parse\\Parse.csproj"
             }
           }
         }

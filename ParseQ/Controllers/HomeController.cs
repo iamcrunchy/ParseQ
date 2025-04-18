@@ -1,6 +1,9 @@
 using System.Diagnostics;
+using FileOperations;
 using Microsoft.AspNetCore.Mvc;
+using Parse;
 using ParseDeepSeekFormat;
+using ParseQ.Dto;
 using ParseQ.Helpers;
 using ParseQ.Models;
 
@@ -31,17 +34,23 @@ public class HomeController : Controller
                 return View("Index");
             }
 
-            var path = Path.GetTempFileName();
 
             var text = await file.ReadAllBytesAsync();
+            var parser = new ParseTextToQuestions();
+            var questions = await parser.BuildQuestionList(text);
 
            // var parse = new ParseDeepSeekFormat();
-           var parser = new Parse();
-           var parsedSuccessfully = parser.ParseTextFile(text, Path.GetFileNameWithoutExtension(file.FileName));
+           // var parser = new Parse();
+           // var parsedSuccessfully = parser.ParseTextFile(text, Path.GetFileNameWithoutExtension(file.FileName));
            //parser.ConvertTextToQtiAsync(text, Path.GetFileNameWithoutExtension(file.FileName));
            //var result = parser.ConvertTextToQtiAsync(stream, path);
 
            //await file.CopyToAsync(stream);
+
+           var qtiGenerator = new QtiGenerator();
+           var result = qtiGenerator.GenerateQtiXml(
+               questions, 
+               Path.GetFileNameWithoutExtension(file.FileName));
         }
         catch (Exception ex)
         {

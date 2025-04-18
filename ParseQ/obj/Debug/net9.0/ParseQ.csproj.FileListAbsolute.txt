@@ -100,3 +100,9 @@ D:\source\ParseQ\ParseQ\bin\Debug\net9.0\ParseDeepSeekFormat.dll
 D:\source\ParseQ\ParseQ\bin\Debug\net9.0\ParseDeepSeekFormat.pdb
 D:\source\ParseQ\ParseQ\obj\Debug\net9.0\ParseQ.csproj.AssemblyReference.cache
 D:\source\ParseQ\ParseQ\obj\Debug\net9.0\ParseQ.csproj.Up2Date
+D:\source\ParseQ\ParseQ\bin\Debug\net9.0\FileOperations.dll
+D:\source\ParseQ\ParseQ\bin\Debug\net9.0\Parse.dll
+D:\source\ParseQ\ParseQ\bin\Debug\net9.0\ParseQDto.dll
+D:\source\ParseQ\ParseQ\bin\Debug\net9.0\FileOperations.pdb
+D:\source\ParseQ\ParseQ\bin\Debug\net9.0\Parse.pdb
+D:\source\ParseQ\ParseQ\bin\Debug\net9.0\ParseQDto.pdb
