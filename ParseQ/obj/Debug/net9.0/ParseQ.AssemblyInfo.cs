@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParseQ")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78b160b7bffabb2fc5efb836a59682216b3ca7f8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a529a97e893ee4495a92d890fd189a4ac1ea19e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParseQ")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParseQ")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

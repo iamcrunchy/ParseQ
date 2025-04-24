@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Xml.Linq;
 using FileOperations;
 using Microsoft.AspNetCore.Mvc;
 using Parse;
@@ -26,6 +27,7 @@ public class HomeController : Controller
     [HttpPost]
     public async Task<IActionResult> Index(IFormFile file)
     {
+        XDocument result;
         try
         {
             if(file.Length == 0)
@@ -39,16 +41,8 @@ public class HomeController : Controller
             var parser = new ParseTextToQuestions();
             var questions = await parser.BuildQuestionList(text);
 
-           // var parse = new ParseDeepSeekFormat();
-           // var parser = new Parse();
-           // var parsedSuccessfully = parser.ParseTextFile(text, Path.GetFileNameWithoutExtension(file.FileName));
-           //parser.ConvertTextToQtiAsync(text, Path.GetFileNameWithoutExtension(file.FileName));
-           //var result = parser.ConvertTextToQtiAsync(stream, path);
-
-           //await file.CopyToAsync(stream);
-
            var qtiGenerator = new QtiGenerator();
-           var result = qtiGenerator.GenerateQtiXml(
+           result = qtiGenerator.GenerateQtiXml(
                questions, 
                Path.GetFileNameWithoutExtension(file.FileName));
         }
