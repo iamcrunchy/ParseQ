@@ -401,3 +401,29 @@ FodyWeavers.xsd
 
 # Random file types that we don't want committed just because we use them while developing
 *.csv
+
+# Ignore cache files
+*.cache
+
+# Ignore DLLs
+*.dll
+
+# Ignore PDBs
+*.pdb
+
+# Ignore Build Artifacts
+/bin/
+/obj/
+
+# Ignore IDE specific files for JetBrains Rider
+.idea/
+
+# Ignore Temporary files
+*.bak
+
+# Ignore some common files 
+# swp are Vim swap files
+*.swp
+
+# macOS metadata files
+*.DS_Store 

@@ -22,6 +22,8 @@ public class ParseTextToQuestions
         // Remove non-quiz text
         lines = RemoveNonQuizText(lines).ToArray();
         
+        int count = 0;
+        
         // Loop through each line and parse the questions
         // todo: this first pass is for multiple choice only, we will update this to handle the other question types later
         foreach (var line in lines)
@@ -38,6 +40,10 @@ public class ParseTextToQuestions
                 // this is a new Question, add the last question and answers to the list 
                 if (_question != null)
                 {
+                    count++;
+                    // each new question should get a question number
+                    _question.Title = "Question " + count;
+
                     questions.Add(_question);
                 }
                 
