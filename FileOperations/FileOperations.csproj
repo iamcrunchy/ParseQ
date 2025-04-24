@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ParseQDto\ParseQDto.csproj" />
+        <ProjectReference Include="..\ParseQDto\ParseQDto.csproj"/>
     </ItemGroup>
 
 </Project>

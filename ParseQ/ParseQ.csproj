@@ -7,9 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FileOperations\FileOperations.csproj" />
-      <ProjectReference Include="..\ParseDeepSeekFormat\ParseDeepSeekFormat.csproj" />
-      <ProjectReference Include="..\Parse\Parse.csproj" />
+        <ProjectReference Include="..\FileOperations\FileOperations.csproj"/>
+        <ProjectReference Include="..\ParseDeepSeekFormat\ParseDeepSeekFormat.csproj"/>
+        <ProjectReference Include="..\Parse\Parse.csproj"/>
     </ItemGroup>
 
 </Project>

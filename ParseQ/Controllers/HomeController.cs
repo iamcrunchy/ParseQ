@@ -3,21 +3,14 @@ using System.Xml.Linq;
 using FileOperations;
 using Microsoft.AspNetCore.Mvc;
 using Parse;
-using ParseDeepSeekFormat;
-using ParseQ.Dto;
 using ParseQ.Helpers;
 using ParseQ.Models;
 
 namespace ParseQ.Controllers;
 
-public class HomeController : Controller
+public class HomeController(ILogger<HomeController> logger) : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
+    private readonly ILogger<HomeController> _logger = logger;
 
     public IActionResult Index()
     {
@@ -30,7 +23,7 @@ public class HomeController : Controller
         XDocument result;
         try
         {
-            if(file.Length == 0)
+            if (file.Length == 0)
             {
                 ViewBag.ErrorMessage = "Please upload a valid text file.";
                 return View("Index");
@@ -39,12 +32,15 @@ public class HomeController : Controller
 
             var text = await file.ReadAllBytesAsync();
             var parser = new ParseTextToQuestions();
-            var questions = await parser.BuildQuestionList(text);
+            var questions = parser.BuildQuestionList(text);
 
-           var qtiGenerator = new QtiGenerator();
-           result = qtiGenerator.GenerateQtiXml(
-               questions, 
-               Path.GetFileNameWithoutExtension(file.FileName));
+            var qtiGenerator = new QtiGenerator();
+            result = qtiGenerator.GenerateQtiXml(
+                questions,
+                Path.GetFileNameWithoutExtension(file.FileName));
+            
+            // print the QTI XML to the screen. 
+            // todo: display the quiz in a new window/page, add link to download the file
         }
         catch (Exception ex)
         {

@@ -10,7 +10,7 @@ public class TextToQti
     {
         _qtiXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     }
-    
+
     public static void ConvertTextToQti(string text)
     {
         // Split the text into lines
@@ -38,29 +38,24 @@ public class TextToQti
     {
         BuildQtiXml(filePath);
         using var reader = new StreamReader(textStream);
-        while(!reader.EndOfStream)
+        while (!reader.EndOfStream)
         {
             // Read each line from the stream
             var line = (await reader.ReadLineAsync())?.Trim();
             if (string.IsNullOrEmpty(line))
                 continue;
-            
+
             // if the line starts with a number followed by a period, it is a question
             var firstCharacter = line[0];
-            if (char.IsDigit(firstCharacter) && line[1] == '.')
-            {
-                AddQuestion(line);
-            }
-            
+            if (char.IsDigit(firstCharacter) && line[1] == '.') AddQuestion(line);
+
             // if the line starts with a letter, or an asterisk followed by a closed parens, it is an answer
             var matches = Regex.Matches(line, @"[a-zA-Z]\)");
 
             foreach (Match match in matches)
-            {
                 // this is a possible answer, so add to the answer section
                 AddAnswer(match.Value);
-            }
-            
+
             // if the line starts with an asterisk, it is a correct answer
 
             return null;
@@ -84,15 +79,14 @@ public class TextToQti
         // this is where we add the answers to the question. Each answer is a <responseLabel> element, inside a
         // render_choice element, which is inside a <responseLid> element
         _qtiXml += $"<responseLid ident=\"response{questionNumber}\">\n";
-        _qtiXml += $"<render_choice>\n";
+        _qtiXml += "<render_choice>\n";
     }
-    
+
     private void AddAnswer(string line)
     {
         // Extract the answer text
-        
     }
-    
+
     private void BuildQtiXml(string fileName)
     {
         // Build the QTI XML structure
@@ -100,7 +94,7 @@ public class TextToQti
         _qtiXml += $"<assessment title=\"{fileName}\">\n";
         _qtiXml += "<section>\n";
     }
-    
+
     private void CompleteQtiXml()
     {
         // Complete the QTI XML structure

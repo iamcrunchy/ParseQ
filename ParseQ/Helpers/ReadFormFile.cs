@@ -9,5 +9,4 @@ public static class ReadFormFile
             return await reader.ReadToEndAsync();
         }
     }
-    
 }

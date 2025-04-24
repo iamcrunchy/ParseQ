@@ -1,7 +1,5 @@
-﻿using System.Xml;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 using ParseQ.Dto;
-using ParseQDto;
 
 namespace FileOperations;
 
@@ -19,22 +17,22 @@ public class QtiGenerator
                 new XElement(imsNamespace + "questestinterop",
                     new XAttribute(XNamespace.Xmlns + "xsi", xsi.NamespaceName),
                     new XAttribute(xsi + "schemaLocation", "http://www.imsglobal.org/xsd/imsg questestinterop_v1p2.xsd")
-                
-                // new XElement(imsNamespace + "assessmentItem",
-                //     new XAttribute(XNamespace.Xmlns + "xsi", xsi.NamespaceName),
-                //     new XAttribute(xsi + "schemaLocation", "http://www.imsglobal.org/xsd/imsg assessmentItem_v1p2.xsd"),
-                //     new XElement(imsNamespace + "itemBody",
-                //         new XElement(imsNamespace + "choiceInteraction",
-                //             new XAttribute("responseIdentifier", "RESPONSE"),
-                //             new XAttribute("maxChoices", "1"),
-                //             questions.Select(q =>
-                //                 new XElement(imsNamespace + "simpleChoice",
-                //                     new XAttribute("identifier", q.CorrectAnswer),
-                //                     q.Text
-                //                 )
-                //             )
-                //         )
-                //     )
+
+                    // new XElement(imsNamespace + "assessmentItem",
+                    //     new XAttribute(XNamespace.Xmlns + "xsi", xsi.NamespaceName),
+                    //     new XAttribute(xsi + "schemaLocation", "http://www.imsglobal.org/xsd/imsg assessmentItem_v1p2.xsd"),
+                    //     new XElement(imsNamespace + "itemBody",
+                    //         new XElement(imsNamespace + "choiceInteraction",
+                    //             new XAttribute("responseIdentifier", "RESPONSE"),
+                    //             new XAttribute("maxChoices", "1"),
+                    //             questions.Select(q =>
+                    //                 new XElement(imsNamespace + "simpleChoice",
+                    //                     new XAttribute("identifier", q.CorrectAnswer),
+                    //                     q.Text
+                    //                 )
+                    //             )
+                    //         )
+                    //     )
                 )
             );
 
@@ -65,7 +63,7 @@ public class QtiGenerator
                     )
                 )
             );
-            
+
             AddRootSection(assessment);
         }
     }
@@ -76,16 +74,15 @@ public class QtiGenerator
             new XAttribute("ident", "root_section"),
             new XAttribute("title", "Root Section")
         );
-        
+
         assessment.Add(rootSection);
     }
-    
+
     public void AddQuestionMetaData(XDocument qtiXml, Question question)
     {
         var section = qtiXml.Descendants("section").FirstOrDefault();
 
         if (section != null)
-        {
             section.Add(new XElement("item",
                 new XAttribute("ident", Guid.NewGuid()),
                 new XAttribute("title", question.Title),
@@ -105,7 +102,6 @@ public class QtiGenerator
                     )
                 )
             ));
-        }
     }
 
     public XDocument AddAssessmentItem(XDocument qtiXml, string title)

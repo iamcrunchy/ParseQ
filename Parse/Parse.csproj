@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\LookUps\LookUps.csproj" />
-      <ProjectReference Include="..\ParseQDto\ParseQDto.csproj" />
+        <ProjectReference Include="..\LookUps\LookUps.csproj"/>
+        <ProjectReference Include="..\ParseQDto\ParseQDto.csproj"/>
     </ItemGroup>
 
 </Project>
