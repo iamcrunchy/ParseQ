@@ -9,31 +9,41 @@ public class QtiGenerator
 {
     public XDocument GenerateQtiXml(List<Question> questions, string title)
     {
-        var xsi = XsiNamespace();
-        var qtiXml = new XDocument(
-            new XElement("assessmentItem",
-                new XAttribute("xmlns", "http://www.imsglobal.org/xsd/imsg"),
-                new XAttribute(XNamespace.Xmlns + "xsi", xsi.NamespaceName),
-                new XAttribute(xsi + "schemaLocation", "http://www.imsglobal.org/xsd/imsg assessmentItem_v1p2.xsd"),
-                new XElement("itemBody",
-                    new XElement("choiceInteraction",
-                        new XAttribute("responseIdentifier", "RESPONSE"),
-                        new XAttribute("maxChoices", "1"),
-                        questions.Select(q => 
-                            new XElement("simpleChoice",
-                                new XAttribute("identifier", q.CorrectAnswer),
-                                q.Text
-                            )
-                        )
-                    )
+        try
+        {
+            XNamespace imsNamespace = "http://www.imsglobal.org/xsd/imsg";
+            var xsi = XsiNamespace();
+
+            var qtiXml = new XDocument(
+                new XDeclaration("1.0", "UTF-8", "yes"),
+                new XElement(imsNamespace + "questestinterop",
+                    new XAttribute(XNamespace.Xmlns + "xsi", xsi.NamespaceName),
+                    new XAttribute(xsi + "schemaLocation", "http://www.imsglobal.org/xsd/imsg questestinterop_v1p2.xsd")
+                
+                // new XElement(imsNamespace + "assessmentItem",
+                //     new XAttribute(XNamespace.Xmlns + "xsi", xsi.NamespaceName),
+                //     new XAttribute(xsi + "schemaLocation", "http://www.imsglobal.org/xsd/imsg assessmentItem_v1p2.xsd"),
+                //     new XElement(imsNamespace + "itemBody",
+                //         new XElement(imsNamespace + "choiceInteraction",
+                //             new XAttribute("responseIdentifier", "RESPONSE"),
+                //             new XAttribute("maxChoices", "1"),
+                //             questions.Select(q =>
+                //                 new XElement(imsNamespace + "simpleChoice",
+                //                     new XAttribute("identifier", q.CorrectAnswer),
+                //                     q.Text
+                //                 )
+                //             )
+                //         )
+                //     )
                 )
-            )
-        );
-        
-        return new XDocument(
-            new XDeclaration("1.0", "UTF-8", "yes"),
-            new XElement("questestinterop", qtiXml)
             );
+
+            return qtiXml;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
 
     private XNamespace XsiNamespace()
@@ -96,5 +106,17 @@ public class QtiGenerator
                 )
             ));
         }
+    }
+
+    public XDocument AddAssessmentItem(XDocument qtiXml, string title)
+    {
+        var assessmentNode = new XElement("assessment",
+            new XAttribute("ident", Guid.NewGuid()),
+            new XAttribute("title", title)
+        );
+
+        qtiXml.Root.Add(assessmentNode);
+
+        return qtiXml;
     }
 }
