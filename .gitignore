@@ -398,3 +398,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Random file types that we don't want committed just because we use them while developing
+*.csv

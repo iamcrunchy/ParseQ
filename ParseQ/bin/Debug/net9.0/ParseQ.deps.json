@@ -27,8 +27,17 @@
           }
         }
       },
+      "LookUps/1.0.0": {
+        "runtime": {
+          "LookUps.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Parse/1.0.0": {
         "dependencies": {
+          "LookUps": "1.0.0",
           "ParseQDto": "1.0.0"
         },
         "runtime": {
@@ -63,6 +72,11 @@
       "sha512": ""
     },
     "FileOperations/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LookUps/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

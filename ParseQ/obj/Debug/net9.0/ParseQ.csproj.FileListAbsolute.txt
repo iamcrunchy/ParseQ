@@ -106,3 +106,5 @@ D:\source\ParseQ\ParseQ\bin\Debug\net9.0\ParseQDto.dll
 D:\source\ParseQ\ParseQ\bin\Debug\net9.0\FileOperations.pdb
 D:\source\ParseQ\ParseQ\bin\Debug\net9.0\Parse.pdb
 D:\source\ParseQ\ParseQ\bin\Debug\net9.0\ParseQDto.pdb
+D:\source\ParseQ\ParseQ\bin\Debug\net9.0\LookUps.dll
+D:\source\ParseQ\ParseQ\bin\Debug\net9.0\LookUps.pdb
